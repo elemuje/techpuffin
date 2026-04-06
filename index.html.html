@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechPuffin Academy – Become a Professional Vibe Coder in 8 Weeks</title>
+<meta name="description" content="TechPuffin Academy: Nigeria's premier Vibe Coding bootcamp. Build websites with AI, automate workflows, earn from Web3. Enroll now for ₦20,000 early bird price.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #05050f;
+  --bg2: #090918;
+  --surface: rgba(255,255,255,0.03);
+  --surface2: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.08);
+  --neon: #7c3aed;
+  --neon2: #3b82f6;
+  --neon3: #06b6d4;
+  --accent: #a78bfa;
+  --green: #10b981;
+  --gold: #f59e0b;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --dim: #475569;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* NOISE OVERLAY */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; }
+h1 { font-size: clamp(2.4rem, 6vw, 5rem); font-weight: 800; }
+h2 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; }
+h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; }
+h4 { font-size: 1.1rem; font-weight: 600; }
+p { color: var(--muted); }
+a { text-decoration: none; color: inherit; }
+
+/* LAYOUT */
+.container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+section { position: relative; z-index: 1; }
+
+/* GRADIENT TEXT */
+.grad { background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 50%, #34d399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.grad2 { background: linear-gradient(135deg, #f59e0b, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* GLASS CARD */
+.glass {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius);
+}
+.glass:hover { border-color: rgba(124,58,237,0.3); }
+
+/* BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 100px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #7c3aed, #3b82f6);
+  color: #fff;
+  box-shadow: 0 0 30px rgba(124,58,237,0.4);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 50px rgba(124,58,237,0.6); }
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+.btn-green {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: #fff;
+  box-shadow: 0 0 30px rgba(16,185,129,0.35);
+}
+.btn-green:hover { transform: translateY(-2px); box-shadow: 0 0 50px rgba(16,185,129,0.55); }
+
+/* SECTION LABEL */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(124,58,237,0.15);
+  border: 1px solid rgba(124,58,237,0.3);
+  color: var(--accent);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* DIVIDER */
+.divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--neon), var(--neon2));
+  border-radius: 100px;
+  margin: 16px 0 24px;
+}
+
+/* ===== NAV ===== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 16px 0;
+  background: rgba(5,5,15,0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+.logo-icon {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #7c3aed, #3b82f6);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.9rem;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-cta { display: flex; align-items: center; gap: 12px; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s; }
+
+/* ===== HERO ===== */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+  overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245,158,11,0.12);
+  border: 1px solid rgba(245,158,11,0.3);
+  color: var(--gold);
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 28px;
+  animation: pulse-gold 2s infinite;
+}
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(245,158,11,0.3); }
+  50% { box-shadow: 0 0 20px 4px rgba(245,158,11,0.2); }
+}
+.hero-title { margin-bottom: 20px; letter-spacing: -0.02em; }
+.hero-subtitle { font-size: 1.1rem; margin-bottom: 36px; max-width: 520px; line-height: 1.7; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 40px; }
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.stat { }
+.stat-num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--text); }
+.stat-label { font-size: 0.8rem; color: var(--dim); }
+
+/* HERO VISUAL */
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.hero-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 32px;
+  border-radius: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+.hero-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(124,58,237,0.08), rgba(59,130,246,0.05));
+}
+.price-tag {
+  text-align: center;
+  padding: 24px;
+  background: rgba(124,58,237,0.1);
+  border: 1px solid rgba(124,58,237,0.2);
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+}
+.price-old {
+  font-size: 0.9rem;
+  color: var(--dim);
+  text-decoration: line-through;
+  margin-bottom: 4px;
+}
+.price-new {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #a78bfa, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.price-sub { font-size: 0.82rem; color: var(--gold); margin-top: 6px; }
+.feature-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.check { color: var(--green); font-size: 1rem; }
+
+/* GLOW ORBS */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: -1;
+}
+.orb-1 { width: 500px; height: 500px; background: rgba(124,58,237,0.15); top: -100px; left: -200px; }
+.orb-2 { width: 400px; height: 400px; background: rgba(59,130,246,0.1); top: 200px; right: -150px; }
+.orb-3 { width: 300px; height: 300px; background: rgba(6,182,212,0.08); bottom: 0; left: 50%; }
+
+/* ===== COUNTDOWN ===== */
+#countdown {
+  background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(59,130,246,0.08));
+  border-top: 1px solid rgba(124,58,237,0.2);
+  border-bottom: 1px solid rgba(124,58,237,0.2);
+  padding: 28px 0;
+}
+.countdown-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.countdown-label {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.countdown-timer { display: flex; gap: 12px; align-items: center; }
+.time-block {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 16px;
+  min-width: 64px;
+  text-align: center;
+}
+.time-num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+.time-label { font-size: 0.65rem; color: var(--dim); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+.time-sep { font-size: 1.5rem; color: var(--dim); font-weight: 700; }
+
+/* ===== ABOUT ===== */
+#about { padding: 100px 0; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.about-text h2 { margin-bottom: 20px; }
+.about-text p { margin-bottom: 16px; line-height: 1.8; }
+.vibe-box {
+  background: rgba(124,58,237,0.08);
+  border: 1px solid rgba(124,58,237,0.2);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin: 24px 0;
+}
+.vibe-box h4 { color: var(--accent); margin-bottom: 10px; font-size: 1rem; }
+.vibe-box p { font-size: 0.92rem; margin: 0; }
+.benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+.benefit-card {
+  padding: 20px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+.benefit-card:hover { border-color: rgba(124,58,237,0.3); transform: translateY(-3px); }
+.benefit-icon { font-size: 1.6rem; margin-bottom: 10px; }
+.benefit-card h4 { font-size: 0.9rem; color: var(--text); margin-bottom: 6px; }
+.benefit-card p { font-size: 0.82rem; margin: 0; }
+
+/* ===== WHY US ===== */
+#why { padding: 100px 0; background: var(--bg2); }
+.why-header { text-align: center; max-width: 600px; margin: 0 auto 60px; }
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.why-card {
+  padding: 32px 24px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--neon), var(--neon2));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.why-card:hover { border-color: rgba(124,58,237,0.3); transform: translateY(-6px); }
+.why-card:hover::before { opacity: 1; }
+.why-icon { font-size: 2.4rem; margin-bottom: 18px; }
+.why-card h3 { font-size: 1.1rem; margin-bottom: 12px; }
+.why-card p { font-size: 0.88rem; line-height: 1.7; }
+
+/* ===== TRAINERS ===== */
+#trainers { padding: 100px 0; }
+.trainers-header { text-align: center; max-width: 600px; margin: 0 auto 60px; }
+.trainers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.trainer-card {
+  padding: 36px 28px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.trainer-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(124,58,237,0.05), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.trainer-card:hover { border-color: rgba(124,58,237,0.4); transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+.trainer-card:hover::after { opacity: 1; }
+.trainer-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+  position: relative;
+}
+.trainer-avatar::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--neon), var(--neon2));
+  z-index: -1;
+}
+.ta1 { background: linear-gradient(135deg, #1e1b4b, #312e81); color: #a78bfa; }
+.ta2 { background: linear-gradient(135deg, #0f172a, #1e3a5f); color: #60a5fa; }
+.ta3 { background: linear-gradient(135deg, #0f2a1e, #064e3b); color: #34d399; }
+.trainer-name { font-size: 1.2rem; margin-bottom: 4px; }
+.trainer-title { font-size: 0.8rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px; }
+.trainer-bio { font-size: 0.88rem; line-height: 1.7; }
+
+/* ===== CURRICULUM ===== */
+#curriculum { padding: 100px 0; background: var(--bg2); }
+.curriculum-header { text-align: center; max-width: 680px; margin: 0 auto 60px; }
+.weeks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.week-card {
+  padding: 28px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+.week-card:hover { border-color: rgba(124,58,237,0.35); transform: translateX(4px); }
+.week-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.week-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(59,130,246,0.2));
+  border: 1px solid rgba(124,58,237,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.week-meta h4 { font-size: 1rem; color: var(--text); margin-bottom: 2px; }
+.week-meta span { font-size: 0.78rem; color: var(--neon3); font-weight: 500; }
+.week-topics { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.week-topics li { display: flex; align-items: flex-start; gap: 8px; font-size: 0.87rem; color: var(--muted); }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 6px; }
+
+/* ===== TIMETABLE ===== */
+#timetable { padding: 100px 0; }
+.timetable-header { text-align: center; max-width: 600px; margin: 0 auto 60px; }
+.timetable-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.tt-card {
+  padding: 24px 20px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  text-align: center;
+}
+.tt-icon { font-size: 2rem; margin-bottom: 14px; }
+.tt-card h4 { font-size: 0.95rem; margin-bottom: 8px; }
+.tt-card p { font-size: 0.83rem; }
+
+/* ===== PRICING ===== */
+#pricing { padding: 100px 0; background: var(--bg2); }
+.pricing-header { text-align: center; max-width: 600px; margin: 0 auto 60px; }
+.pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 800px; margin: 0 auto; }
+.pricing-card {
+  padding: 40px;
+  border-radius: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.pricing-card.featured {
+  background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(59,130,246,0.08));
+  border-color: rgba(124,58,237,0.4);
+  box-shadow: 0 0 60px rgba(124,58,237,0.15);
+}
+.pricing-card:hover { transform: translateY(-6px); }
+.badge-hot {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #7c3aed, #3b82f6);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.pricing-card h3 { margin-bottom: 8px; }
+.pricing-card .sub { font-size: 0.88rem; margin-bottom: 28px; }
+.price-amount {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.pricing-features { list-style: none; display: flex; flex-direction: column; gap: 14px; margin: 28px 0; padding-top: 24px; border-top: 1px solid var(--border); }
+.pricing-features li { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--muted); }
+.urgency {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background: rgba(245,158,11,0.08);
+  border: 1px solid rgba(245,158,11,0.2);
+  border-radius: var(--radius-sm);
+}
+.urgency p { color: var(--gold); font-weight: 600; font-size: 0.9rem; margin: 0; }
+
+/* ===== ENROLLMENT ===== */
+#enroll { padding: 100px 0; }
+.enroll-header { text-align: center; max-width: 640px; margin: 0 auto 60px; }
+.enroll-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 900px; margin: 0 auto; }
+.enroll-card {
+  padding: 40px;
+  border-radius: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  text-align: center;
+}
+.enroll-card.wha { border-color: rgba(37,211,102,0.3); }
+.enroll-icon { font-size: 3rem; margin-bottom: 20px; }
+.enroll-card h3 { margin-bottom: 12px; }
+.enroll-card p { font-size: 0.9rem; margin-bottom: 28px; }
+.bank-details {
+  background: rgba(59,130,246,0.08);
+  border: 1px solid rgba(59,130,246,0.2);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+.bank-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.88rem; }
+.bank-row:last-child { border-bottom: none; }
+.bank-row span:first-child { color: var(--dim); }
+.bank-row span:last-child { color: var(--text); font-weight: 500; }
+
+/* ===== TESTIMONIALS ===== */
+#testimonials { padding: 100px 0; background: var(--bg2); }
+.test-header { text-align: center; max-width: 600px; margin: 0 auto 60px; }
+.test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.test-card {
+  padding: 28px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+.test-card:hover { border-color: rgba(124,58,237,0.3); transform: translateY(-4px); }
+.test-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 16px; }
+.test-quote { font-size: 0.92rem; line-height: 1.75; margin-bottom: 24px; font-style: italic; }
+.test-author { display: flex; align-items: center; gap: 12px; }
+.test-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  font-family: var(--font-display);
+  flex-shrink: 0;
+}
+.av1 { background: linear-gradient(135deg, #7c3aed, #3b82f6); color: #fff; }
+.av2 { background: linear-gradient(135deg, #059669, #0891b2); color: #fff; }
+.av3 { background: linear-gradient(135deg, #dc2626, #ea580c); color: #fff; }
+.av4 { background: linear-gradient(135deg, #7c3aed, #a855f7); color: #fff; }
+.av5 { background: linear-gradient(135deg, #0284c7, #06b6d4); color: #fff; }
+.av6 { background: linear-gradient(135deg, #047857, #10b981); color: #fff; }
+.test-name { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+.test-role { font-size: 0.78rem; color: var(--dim); }
+
+/* ===== FAQ ===== */
+#faq { padding: 100px 0; }
+.faq-header { text-align: center; max-width: 600px; margin: 0 auto 60px; }
+.faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+.faq-item {
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.faq-item.open { border-color: rgba(124,58,237,0.35); }
+.faq-q {
+  padding: 22px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+  gap: 16px;
+}
+.faq-q:hover { color: var(--accent); }
+.faq-icon { font-size: 1.2rem; color: var(--accent); transition: transform 0.3s; flex-shrink: 0; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a {
+  padding: 0 24px;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+.faq-item.open .faq-a { max-height: 200px; padding: 0 24px 22px; }
+
+/* ===== TRUST ===== */
+.trust-bar {
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin: 60px 0;
+}
+.trust-inner { display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
+.trust-item { display: flex; align-items: center; gap: 10px; }
+.trust-item span:first-child { font-size: 1.4rem; }
+.trust-item span:last-child { font-size: 0.85rem; font-weight: 600; color: var(--muted); }
+
+/* ===== CONTACT ===== */
+#contact { padding: 100px 0; background: var(--bg2); }
+.contact-inner { text-align: center; max-width: 640px; margin: 0 auto; }
+.contact-inner h2 { margin-bottom: 16px; }
+.contact-inner p { margin-bottom: 40px; }
+.wa-cards { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+.wa-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  border-radius: 100px;
+  background: rgba(37,211,102,0.08);
+  border: 1px solid rgba(37,211,102,0.25);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #4ade80;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.wa-card:hover { background: rgba(37,211,102,0.15); transform: translateY(-2px); }
+.wa-icon { font-size: 1.1rem; }
+
+/* ===== FOOTER ===== */
+footer {
+  padding: 60px 0 32px;
+  border-top: 1px solid var(--border);
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-copy { font-size: 0.85rem; color: var(--dim); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { font-size: 0.85rem; color: var(--dim); transition: color 0.2s; }
+.footer-links a:hover { color: var(--accent); }
+
+/* ===== CTA BANNER ===== */
+.cta-banner {
+  margin: 60px 0;
+  padding: 48px 40px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(59,130,246,0.1));
+  border: 1px solid rgba(124,58,237,0.25);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(124,58,237,0.15), transparent 70%);
+}
+.cta-banner h2 { margin-bottom: 16px; }
+.cta-banner p { margin-bottom: 28px; max-width: 500px; margin-left: auto; margin-right: auto; }
+.cta-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.7s ease forwards; }
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+
+/* ===== TABLET (max 1024px) ===== */
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .hero-visual { display: none; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .trainers-grid { grid-template-columns: 1fr 1fr; }
+  .weeks-grid { grid-template-columns: 1fr; }
+  .timetable-grid { grid-template-columns: 1fr 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 480px; }
+  .enroll-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+}
+
+/* ===== MOBILE (max 768px) ===== */
+@media (max-width: 768px) {
+  /* NAV */
+  .nav-links { display: none; }
+  .nav-cta .btn-ghost { display: none; }
+  .hamburger { display: flex; }
+  .logo { font-size: 1rem; }
+
+  /* SECTIONS */
+  #hero { padding: 100px 0 60px; }
+  #about, #why, #trainers, #curriculum, #timetable, #pricing, #enroll, #faq, #contact { padding: 72px 0; }
+  #countdown { padding: 20px 0; }
+
+  /* HERO */
+  .hero-badge { font-size: 0.75rem; padding: 6px 14px; }
+  .hero-subtitle { font-size: 1rem; }
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .hero-stats { gap: 16px; flex-wrap: wrap; }
+  .stat-num { font-size: 1.3rem; }
+
+  /* COUNTDOWN */
+  .countdown-inner { flex-direction: column; gap: 16px; }
+  .countdown-timer { gap: 8px; }
+  .time-block { padding: 8px 12px; min-width: 54px; }
+  .time-num { font-size: 1.4rem; }
+  .countdown-label { font-size: 0.82rem; text-align: center; }
+  #countdown .btn { width: 100%; justify-content: center; max-width: 280px; }
+
+  /* GRIDS */
+  .why-grid { grid-template-columns: 1fr; gap: 16px; }
+  .trainers-grid { grid-template-columns: 1fr; gap: 20px; }
+  .timetable-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .benefits-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .weeks-grid { gap: 16px; }
+
+  /* CARDS */
+  .why-card { padding: 24px 20px; }
+  .trainer-card { padding: 28px 20px; }
+  .week-card { padding: 22px 20px; }
+
+  /* PRICING */
+  .pricing-grid { grid-template-columns: 1fr; max-width: 100%; }
+  .pricing-card { padding: 28px 24px; }
+  .price-amount { font-size: 2.4rem; }
+
+  /* ENROLL */
+  .enroll-grid { grid-template-columns: 1fr; }
+  .enroll-card { padding: 28px 20px; }
+  .bank-row { flex-direction: column; align-items: flex-start; gap: 4px; }
+
+  /* TRUST BAR */
+  .trust-inner { gap: 20px; justify-content: flex-start; }
+  .trust-bar { padding: 24px 0; }
+
+  /* CTA BANNER */
+  .cta-banner { padding: 36px 20px; margin: 40px 0; }
+  .cta-actions { flex-direction: column; align-items: center; }
+  .cta-actions .btn { width: 100%; justify-content: center; max-width: 320px; }
+
+  /* CONTACT */
+  .wa-cards { flex-direction: column; align-items: center; gap: 12px; }
+  .wa-card { width: 100%; max-width: 300px; justify-content: center; }
+  .contact-inner .btn { width: 100%; max-width: 300px; justify-content: center; }
+
+  /* FOOTER */
+  .footer-inner { flex-direction: column; align-items: center; text-align: center; gap: 16px; }
+
+  /* SECTION LABELS */
+  .section-label { font-size: 0.75rem; }
+}
+
+/* ===== SMALL MOBILE (max 480px) ===== */
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+
+  /* SECTIONS */
+  #hero { padding: 90px 0 56px; }
+
+  /* COUNTDOWN */
+  .time-block { padding: 8px 10px; min-width: 48px; }
+  .time-num { font-size: 1.2rem; }
+  .time-sep { font-size: 1.1rem; }
+
+  /* GRIDS */
+  .timetable-grid { grid-template-columns: 1fr; }
+  .benefits-grid { grid-template-columns: 1fr; }
+
+  /* TYPOGRAPHY */
+  h2 { font-size: clamp(1.5rem, 7vw, 2rem); }
+
+  /* CARDS */
+  .benefit-card { padding: 16px; }
+  .why-card { padding: 20px 16px; }
+  .week-card { padding: 20px 16px; }
+  .trainer-card { padding: 24px 16px; }
+  .pricing-card { padding: 24px 16px; }
+  .enroll-card { padding: 24px 16px; }
+  .tt-card { padding: 20px 16px; }
+  .cta-banner { padding: 28px 16px; }
+
+  /* TRAINER */
+  .trainer-avatar { width: 72px; height: 72px; font-size: 1.5rem; }
+
+  /* BANK */
+  .bank-details { padding: 16px; }
+  .bank-row span:last-child { font-size: 0.85rem; word-break: break-all; }
+
+  /* BUTTONS */
+  .btn { padding: 13px 22px; font-size: 0.88rem; }
+
+  /* FAQ */
+  .faq-q { font-size: 0.88rem; padding: 18px 16px; }
+  .faq-a { font-size: 0.85rem; }
+  .faq-item.open .faq-a { padding: 0 16px 18px; }
+
+  /* HERO STATS */
+  .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+}
+
+/* ===== MOBILE NAV OPEN ===== */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: rgba(5,5,15,0.97);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 24px;
+  z-index: 999;
+  flex-direction: column;
+  gap: 20px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-size: 1rem;
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-weight: 600;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.mobile-menu a:last-child { border-bottom: none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-icon">🐧</div>
+        <span>TechPuffin <span class="grad">Academy</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#curriculum">Curriculum</a></li>
+        <li><a href="#trainers">Trainers</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#pricing" class="btn btn-ghost">View Pricing</a>
+        <a href="https://wa.me/+2348143399914?text=Hello%20I%20Want%20to%20Enroll%20for%20the%20Vibe%20Coding%20Class" class="btn btn-primary" target="_blank">Enroll Now →</a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#curriculum" onclick="closeMenu()">Curriculum</a>
+  <a href="#trainers" onclick="closeMenu()">Trainers</a>
+  <a href="#pricing" onclick="closeMenu()">Pricing</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="#enroll" onclick="closeMenu()">Enroll Now →</a>
+</div>
+
+<!-- ORBS -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content fade-up">
+        <div class="hero-badge">🔥 First Cohort — Limited Slots Available</div>
+        <h1 class="hero-title">Become a Professional <span class="grad">Vibe Coder</span> in 8 Weeks</h1>
+        <p class="hero-subtitle">Learn how to build, automate, and earn using AI-powered development. No prior coding experience required. Just a smartphone or laptop — and the drive to change your life.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/+2348143399914?text=Hello%20I%20Want%20to%20Enroll%20for%20the%20Vibe%20Coding%20Class" class="btn btn-primary" target="_blank">📲 Enroll Now via WhatsApp</a>
+          <a href="#curriculum" class="btn btn-ghost">View Curriculum →</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num grad">8</div>
+            <div class="stat-label">Week Program</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num grad">3</div>
+            <div class="stat-label">Expert Trainers</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num grad">₦20k</div>
+            <div class="stat-label">Early Bird Price</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num grad">∞</div>
+            <div class="stat-label">Earning Potential</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual fade-up delay-2">
+        <div class="hero-card glass">
+          <div class="price-tag">
+            <div class="price-old">Standard Price: ₦25,000</div>
+            <div class="price-new">₦20,000</div>
+            <div class="price-sub">⚡ Early Bird — First Cohort Only</div>
+          </div>
+          <ul class="feature-list">
+            <li><span class="check">✓</span> 8 weeks of structured live training</li>
+            <li><span class="check">✓</span> AI-powered development skills</li>
+            <li><span class="check">✓</span> Web3 & blockchain basics</li>
+            <li><span class="check">✓</span> Automation & bash scripting</li>
+            <li><span class="check">✓</span> Freelancing & earning strategies</li>
+            <li><span class="check">✓</span> Certificate of completion</li>
+            <li><span class="check">✓</span> WhatsApp community access</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COUNTDOWN ===== -->
+<section id="countdown">
+  <div class="container">
+    <div class="countdown-inner">
+      <div class="countdown-label">⏳ Early Bird Offer Ends In:</div>
+      <div class="countdown-timer">
+        <div class="time-block"><div class="time-num" id="cd-days">00</div><div class="time-label">Days</div></div>
+        <div class="time-sep">:</div>
+        <div class="time-block"><div class="time-num" id="cd-hours">00</div><div class="time-label">Hours</div></div>
+        <div class="time-sep">:</div>
+        <div class="time-block"><div class="time-num" id="cd-mins">00</div><div class="time-label">Mins</div></div>
+        <div class="time-sep">:</div>
+        <div class="time-block"><div class="time-num" id="cd-secs">00</div><div class="time-label">Secs</div></div>
+      </div>
+      <a href="https://wa.me/+2348143399914?text=Hello%20I%20Want%20to%20Enroll%20for%20the%20Vibe%20Coding%20Class" class="btn btn-primary" target="_blank">Claim Early Bird →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-label">🐧 Our Story</div>
+        <h2>Redefining Tech Education in <span class="grad">Africa</span></h2>
+        <div class="divider"></div>
+        <p>TechPuffin Academy was founded with a clear mission: to democratize access to cutting-edge tech skills across Africa. We believe that regardless of your background or prior experience, you deserve the tools to build a profitable tech career.</p>
+        <p>We're not just another coding bootcamp. We train the next generation of <strong style="color:var(--text)">Vibe Coders</strong> — developers who combine traditional programming knowledge with the power of AI to build faster, smarter, and earn more.</p>
+        <div class="vibe-box">
+          <h4>⚡ What is Vibe Coding?</h4>
+          <p>Vibe Coding is a modern, AI-augmented approach to software development. Instead of memorizing every line of syntax, Vibe Coders use AI tools like Claude, GPT, and GitHub Copilot to accelerate building — while understanding the fundamentals needed to direct, refine, and deploy real products.</p>
+        </div>
+      </div>
+      <div class="about-benefits">
+        <div class="section-label">🚀 What You'll Gain</div>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">🤖</div>
+            <h4>Build with AI</h4>
+            <p>Create stunning websites and apps using AI-powered tools and prompt engineering</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">💰</div>
+            <h4>Earn Remotely</h4>
+            <p>Freelance on Fiverr, Upwork & local markets from day one</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">⛓️</div>
+            <h4>Enter Web3</h4>
+            <p>Tap into blockchain and decentralized tech — the future of the internet</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">⚙️</div>
+            <h4>Automate Everything</h4>
+            <p>Build scripts and bots that work for you 24/7</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY US ===== -->
+<section id="why">
+  <div class="container">
+    <div class="why-header">
+      <div class="section-label">✅ Why TechPuffin</div>
+      <h2>Built Different, <span class="grad">Designed to Win</span></h2>
+      <p style="margin-top:16px">Everything about this program is engineered to get you results — not just certificates</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🎯</div>
+        <h3>Industry-Relevant Curriculum</h3>
+        <p>Every week maps to real job skills and freelance opportunities. We skip the fluff and focus on what actually earns money.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🛠️</div>
+        <h3>Hands-On & Practical</h3>
+        <p>You'll build real projects every week. By graduation, you'll have a portfolio that speaks for itself.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">👨‍🏫</div>
+        <h3>Expert Instructors</h3>
+        <p>Learn directly from active practitioners — developers and automation experts working in the field today.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🌍</div>
+        <h3>Real Earning Opportunities</h3>
+        <p>From freelancing to Web3, we show you exactly how to monetize your new skills from week one.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🏷️</div>
+        <h3>First Cohort Advantage</h3>
+        <p>Get the lowest price ever offered. As the program grows, the entry cost will rise. Lock in now.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🤝</div>
+        <h3>Community & Support</h3>
+        <p>Join a WhatsApp community of fellow learners and mentors. No one codes alone in TechPuffin.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRAINERS ===== -->
+<section id="trainers">
+  <div class="container">
+    <div class="trainers-header">
+      <div class="section-label">👨‍💻 Meet the Team</div>
+      <h2>Your <span class="grad">Expert Instructors</span></h2>
+      <p style="margin-top:16px">Learn from professionals actively building and earning in the tech industry</p>
+    </div>
+    <div class="trainers-grid">
+      <div class="trainer-card">
+        <div class="trainer-avatar ta1">TP</div>
+        <h3 class="trainer-name">TechPuffin</h3>
+        <div class="trainer-title">Lead Instructor & Founder</div>
+        <p class="trainer-bio">The visionary behind TechPuffin Academy. A seasoned developer and tech educator passionate about making AI-powered development accessible to everyone in Africa. Brings deep expertise in frontend development, Web3, and building scalable learning systems.</p>
+      </div>
+      <div class="trainer-card">
+        <div class="trainer-avatar ta2">FX</div>
+        <h3 class="trainer-name">Fixitech</h3>
+        <div class="trainer-title">Systems & Automation Expert</div>
+        <p class="trainer-bio">A Linux wizard and automation specialist with years of experience building robust backend systems and automation pipelines. If it can be scripted, Fixitech has already scripted it — and will teach you how too.</p>
+      </div>
+      <div class="trainer-card">
+        <div class="trainer-avatar ta3">RD</div>
+        <h3 class="trainer-name">R.Dev</h3>
+        <div class="trainer-title">AI & Frontend Specialist</div>
+        <p class="trainer-bio">An AI-first developer who builds production-grade interfaces using modern AI tools and prompt engineering. R.Dev brings the future of development to the classroom — teaching you to code smarter, not harder.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CURRICULUM ===== -->
+<section id="curriculum">
+  <div class="container">
+    <div class="curriculum-header">
+      <div class="section-label">📚 8-Week Program</div>
+      <h2>The Vibe Coding <span class="grad">Training Curriculum</span></h2>
+      <p style="margin-top:16px">A structured, progressive journey from zero to professional Vibe Coder — packed with real projects at every stage</p>
+    </div>
+    <div class="weeks-grid">
+      <div class="week-card">
+        <div class="week-header">
+          <div class="week-num">W1</div>
+          <div class="week-meta"><h4>Foundations</h4><span>Instructor: TechPuffin</span></div>
+        </div>
+        <ul class="week-topics">
+          <li><div class="dot"></div>Introduction to Vibe Coding</li>
+          <li><div class="dot"></div>How Vibe Coding Works</li>
+          <li><div class="dot"></div>How to Earn with These Skills</li>
+          <li><div class="dot"></div>Career & Job Opportunities</li>
+        </ul>
+      </div>
+      <div class="week-card">
+        <div class="week-header">
+          <div class="week-num">W2</div>
+          <div class="week-meta"><h4>Programming & Setup</h4><span>Instructor: Fixitech</span></div>
+        </div>
+        <ul class="week-topics">
+          <li><div class="dot"></div>Programming Basics</li>
+          <li><div class="dot"></div>Linux Setup with VS Code & Termux</li>
+          <li><div class="dot"></div>GitHub Project Execution</li>
+        </ul>
+      </div>
+      <div class="week-card">
+        <div class="week-header">
+          <div class="week-num">W3</div>
+          <div class="week-meta"><h4>AI Development</h4><span>Instructor: R.Dev</span></div>
+        </div>
+        <ul class="week-topics">
+          <li><div class="dot"></div>Vibecoding Deep Dive</li>
+          <li><div class="dot"></div>Using Claude AI Effectively</li>
+          <li><div class="dot"></div>Prompt Engineering Mastery</li>
+        </ul>
+      </div>
+      <div class="week-card">
+        <div class="week-header">
+          <div class="week-num">W4</div>
+          <div class="week-meta"><h4>Frontend Development</h4><span>Instructors: R.Dev + TechPuffin</span></div>
+        </div>
+        <ul class="week-topics">
+          <li><div class="dot"></div>AI Website Building (4A - R.Dev)</li>
+          <li><div class="dot"></div>Real Project Builds</li>
+          <li><div class="dot"></div>Traditional Frontend Techniques (4B - TechPuffin)</li>
+        </ul>
+      </div>
+      <div class="week-card">
+        <div class="week-header">
+          <div class="week-num">W5</div>
+          <div class="week-meta"><h4>Automation</h4><span>Instructor: Fixitech</span></div>
+        </div>
+        <ul class="week-topics">
+          <li><div class="dot"></div>Bash Scripting Fundamentals</li>
+          <li><div class="dot"></div>Blockchain Automation</li>
+          <li><div class="dot"></div>Practical Automation Projects</li>
+        </ul>
+      </div>
+      <div class="week-card">
+        <div class="week-header">
+          <div class="week-num">W6</div>
+          <div class="week-meta"><h4>Web3</h4><span>Instructor: TechPuffin</span></div>
+        </div>
+        <ul class="week-topics">
+          <li><div class="dot"></div>Web3 Fundamentals & Concepts</li>
+          <li><div class="dot"></div>Vibecoding in Web3</li>
+          <li><div class="dot"></div>Decentralized App Basics</li>
+        </ul>
+      </div>
+      <div class="week-card">
+        <div class="week-header">
+          <div class="week-num">W7</div>
+          <div class="week-meta"><h4>Deployment</h4><span>TechPuffin & Fixitech</span></div>
+        </div>
+        <ul class="week-topics">
+          <li><div class="dot"></div>Hosting & Production Deployment</li>
+          <li><div class="dot"></div>Domain & Server Setup</li>
+          <li><div class="dot"></div>Going Live with Real Projects</li>
+        </ul>
+      </div>
+      <div class="week-card" style="border-color: rgba(124,58,237,0.3); background: rgba(124,58,237,0.05);">
+        <div class="week-header">
+          <div class="week-num" style="background: linear-gradient(135deg, rgba(124,58,237,0.5), rgba(59,130,246,0.4));">W8</div>
+          <div class="week-meta"><h4>Interactive Finale</h4><span>All Instructors</span></div>
+        </div>
+        <ul class="week-topics">
+          <li><div class="dot"></div>Open Q&A with All Trainers</li>
+          <li><div class="dot"></div>Project Showcase & Review</li>
+          <li><div class="dot"></div>Certification & Next Steps</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TIMETABLE ===== -->
+<section id="timetable">
+  <div class="container">
+    <div class="timetable-header">
+      <div class="section-label">🗓️ Schedule</div>
+      <h2>Flexible Yet <span class="grad">Structured</span></h2>
+      <p style="margin-top:16px">Designed for working people and students — learn on your terms without falling behind</p>
+    </div>
+    <div class="timetable-grid">
+      <div class="tt-card glass">
+        <div class="tt-icon">📡</div>
+        <h4>Live Sessions</h4>
+        <p>Weekly interactive classes with your instructor via WhatsApp, Zoom or Google Meet</p>
+      </div>
+      <div class="tt-card glass">
+        <div class="tt-icon">📋</div>
+        <h4>Weekly Assignments</h4>
+        <p>Practical tasks that reinforce each week's lessons. Real builds, real learning</p>
+      </div>
+      <div class="tt-card glass">
+        <div class="tt-icon">💬</div>
+        <h4>Community Support</h4>
+        <p>24/7 WhatsApp group access. Ask questions, share progress, get unstuck fast</p>
+      </div>
+      <div class="tt-card glass">
+        <div class="tt-icon">🎓</div>
+        <h4>Final Certification</h4>
+        <p>Complete the 8 weeks and receive your TechPuffin Academy certificate of completion</p>
+      </div>
+    </div>
+
+    <!-- CTA BANNER -->
+    <div class="cta-banner">
+      <div class="section-label" style="margin: 0 auto 20px; display: table;">⚡ Don't Wait</div>
+      <h2>Ready to Start Your <span class="grad">Tech Journey?</span></h2>
+      <p>Join the first cohort. Get the best price we'll ever offer. Secure your slot before they're gone.</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/+2348143399914?text=Hello%20I%20Want%20to%20Enroll%20for%20the%20Vibe%20Coding%20Class" class="btn btn-primary" target="_blank">📲 Enroll via WhatsApp</a>
+        <a href="#pricing" class="btn btn-ghost">See Pricing →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section id="pricing">
+  <div class="container">
+    <div class="pricing-header">
+      <div class="section-label">💸 Investment</div>
+      <h2>Simple, <span class="grad">Transparent</span> Pricing</h2>
+      <p style="margin-top:16px">No hidden fees. No upsells. Just one price — and the best deal is right now.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Standard</h3>
+        <p class="sub">Regular enrollment price</p>
+        <div class="price-amount" style="color: var(--muted);">₦25,000</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Full 8-week curriculum</li>
+          <li><span class="check">✓</span> All trainer sessions</li>
+          <li><span class="check">✓</span> Assignments & projects</li>
+          <li><span class="check">✓</span> WhatsApp community</li>
+          <li><span class="check">✓</span> Certificate of completion</li>
+        </ul>
+        <a href="https://wa.me/+2348143399914?text=Hello%20I%20Want%20to%20Enroll%20for%20the%20Vibe%20Coding%20Class" class="btn btn-ghost" style="width:100%; justify-content:center;" target="_blank">Enroll at Standard Price</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="badge-hot">🔥 Best Deal</div>
+        <h3 class="grad">Early Bird</h3>
+        <p class="sub">First cohort exclusive — limited time</p>
+        <div class="price-amount grad">₦20,000</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Full 8-week curriculum</li>
+          <li><span class="check">✓</span> All trainer sessions</li>
+          <li><span class="check">✓</span> Assignments & projects</li>
+          <li><span class="check">✓</span> WhatsApp community</li>
+          <li><span class="check">✓</span> Certificate of completion</li>
+          <li><span style="color:var(--gold)">⭐</span> <span style="color:var(--gold)">First cohort badge (exclusive)</span></li>
+        </ul>
+        <a href="https://wa.me/+2348143399914?text=Hello%20I%20Want%20to%20Enroll%20for%20the%20Vibe%20Coding%20Class" class="btn btn-primary" style="width:100%; justify-content:center;" target="_blank">Claim Early Bird — ₦20,000 →</a>
+      </div>
+    </div>
+    <div class="urgency" style="max-width:800px; margin: 24px auto 0;">
+      <p>⚠️ Early bird pricing ends when the first cohort is full. Once slots are gone, the price returns to ₦25,000.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ENROLLMENT ===== -->
+<section id="enroll">
+  <div class="container">
+    <div class="enroll-header">
+      <div class="section-label">🎓 Enroll Today</div>
+      <h2>Two Simple Ways to <span class="grad">Secure Your Slot</span></h2>
+      <p style="margin-top:16px">Pick the option that works best for you. We'll confirm your enrollment within 24 hours.</p>
+    </div>
+    <div class="enroll-grid">
+      <div class="enroll-card wha">
+        <div class="enroll-icon">💬</div>
+        <h3>Enroll via WhatsApp</h3>
+        <p>The fastest way to secure your slot. Click the button below and we'll guide you through the enrollment process directly on WhatsApp.</p>
+        <a href="https://wa.me/+2348143399914?text=Hello%20I%20Want%20to%20Enroll%20for%20the%20Vibe%20Coding%20Class" class="btn btn-green" style="width:100%; justify-content:center; margin-bottom: 16px;" target="_blank">📲 Chat on WhatsApp →</a>
+        <p style="font-size:0.82rem; color:var(--dim);">Click to open WhatsApp with a pre-filled enrollment message</p>
+      </div>
+      <div class="enroll-card">
+        <div class="enroll-icon">🏦</div>
+        <h3>Direct Bank Transfer</h3>
+        <p>Transfer directly to our account and send proof of payment on WhatsApp for instant confirmation.</p>
+        <div class="bank-details">
+          <div class="bank-row"><span>Bank</span><span>Moniepoint MFB</span></div>
+          <div class="bank-row"><span>Account Name</span><span>Adebimpe Mujeeb</span></div>
+          <div class="bank-row"><span>Account Number</span><span style="color:var(--accent); font-family: var(--font-display); letter-spacing:0.05em;">5677370873</span></div>
+          <div class="bank-row"><span>Amount</span><span style="color:var(--green);">₦20,000 (Early Bird)</span></div>
+        </div>
+        <a href="https://wa.me/+2348143399914?text=I%20have%20made%20payment%20for%20the%20Vibe%20Coding%20Class%20-%20please%20find%20attached%20proof" class="btn btn-ghost" style="width:100%; justify-content:center;" target="_blank">Send Payment Proof →</a>
+      </div>
+    </div>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+      <div class="trust-inner">
+        <div class="trust-item"><span>🔒</span><span>Secure Payment</span></div>
+        <div class="trust-item"><span>✅</span><span>Verified Training</span></div>
+        <div class="trust-item"><span>🎓</span><span>Certified Program</span></div>
+        <div class="trust-item"><span>🇳🇬</span><span>Made in Nigeria</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-header">
+      <div class="section-label">❓ FAQ</div>
+      <h2>Frequently Asked <span class="grad">Questions</span></h2>
+      <p style="margin-top:16px">Everything you need to know before enrolling</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do I need prior coding experience? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Absolutely not! TechPuffin Academy is designed to be beginner-friendly. If you can use a smartphone or basic computer, you're ready. We start from the very beginning and build you up week by week.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What device do I need for the course? <span class="faq-icon">+</span></div>
+        <div class="faq-a">You can follow along with a laptop, desktop, or even an Android smartphone using Termux (covered in Week 2). A laptop is recommended for the best experience, but we've designed the curriculum to be accessible on mobile too.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How are sessions conducted? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Sessions are conducted via WhatsApp groups, Zoom, or Google Meet. You'll receive recordings if you miss a live session. All materials, resources, and assignments are shared in our dedicated WhatsApp community.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I really earn money after just 8 weeks? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes! Many students begin earning in the middle of the program — especially after the AI Website Building module in Week 4. We teach you to build real products clients will pay for. Some students land their first paid project before the program even ends.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is the ₦20,000 early bird price final? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. ₦20,000 is exclusively for the first cohort and will not be offered again. Once slots fill up or the countdown ends, the price returns to ₦25,000. Subsequent cohorts may cost significantly more as the program grows.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What happens after I pay? <span class="faq-icon">+</span></div>
+        <div class="faq-a">After payment, send your proof via WhatsApp to +2348143399914. You'll be added to the official student group within 24 hours, receive your welcome kit, and get access to pre-course resources to get a head start.</div>
+      </div>
+    </div>
+
+    <!-- FINAL CTA BANNER -->
+    <div class="cta-banner" style="margin-top: 80px;">
+      <div class="section-label" style="margin: 0 auto 20px; display: table;">🚀 Last Chance</div>
+      <h2>Don't Let This Opportunity <span class="grad2">Pass You By</span></h2>
+      <p>Thousands of skills. One decision. Your future as a professional Vibe Coder starts with clicking the button below.</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/+2348143399914?text=Hello%20I%20Want%20to%20Enroll%20for%20the%20Vibe%20Coding%20Class" class="btn btn-primary" target="_blank">📲 Enroll Now — ₦20,000</a>
+        <a href="#contact" class="btn btn-ghost">Ask a Question →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="section-label" style="margin: 0 auto 20px; display: table;">📞 Contact</div>
+      <h2>Have Questions? <span class="grad">We're Here</span></h2>
+      <p>Reach out on WhatsApp and one of our team members will respond quickly</p>
+      <div class="wa-cards">
+        <a href="https://wa.me/+2348143399914" class="wa-card" target="_blank"><span class="wa-icon">💬</span>+234 814 339 9914</a>
+        <a href="https://wa.me/+23464062341" class="wa-card" target="_blank"><span class="wa-icon">💬</span>+234 640 623 41</a>
+        <a href="https://wa.me/+2348147815829" class="wa-card" target="_blank"><span class="wa-icon">💬</span>+234 814 781 5829</a>
+      </div>
+      <a href="https://wa.me/+2348143399914?text=Hello%20I%20Want%20to%20Enroll%20for%20the%20Vibe%20Coding%20Class" class="btn btn-primary" target="_blank">📲 Start Conversation on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="logo" style="margin-bottom:8px;">
+          <div class="logo-icon">🐧</div>
+          <span>TechPuffin <span class="grad">Academy</span></span>
+        </div>
+        <div class="footer-copy">© 2025 TechPuffin Academy. All rights reserved.</div>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#curriculum">Curriculum</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== COUNTDOWN TIMER =====
+(function() {
+  const deadline = new Date();
+  deadline.setDate(deadline.getDate() + 21); // 21 days from now
+  
+  function update() {
+    const now = new Date();
+    const diff = deadline - now;
+    if (diff <= 0) {
+      document.getElementById('cd-days').textContent = '00';
+      document.getElementById('cd-hours').textContent = '00';
+      document.getElementById('cd-mins').textContent = '00';
+      document.getElementById('cd-secs').textContent = '00';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+  }
+  update();
+  setInterval(update, 1000);
+})();
+
+// ===== FAQ =====
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// ===== MOBILE NAV =====
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+// ===== NAV SCROLL =====
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (window.scrollY > 50) nav.style.padding = '10px 0';
+  else nav.style.padding = '16px 0';
+});
+
+// ===== INTERSECTION OBSERVER for subtle reveals =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.week-card, .why-card, .trainer-card, .test-card, .benefit-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
